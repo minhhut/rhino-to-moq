@@ -1,0 +1,22 @@
+name: .NET Core - Build and Publish to NuGet.Org
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+    - name: Publish NuGet
+      uses: rohith/publish-nuget@v1.2.0
+      with:
+        tag_format:  v* # [*] gets replaced with version
+        nuget_key: ${{secrets.NUGET_API_KEY}} # nuget.org API key
