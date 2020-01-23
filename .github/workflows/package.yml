@@ -14,8 +14,8 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Pack
-      run: dotnet pack --configuration Release
-    - name: Setup nuget config
-      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' .nuget.config > nuget.config
-    - name: Publish nuget
-      run: dotnet nuget push "bin/Release/*.nupkg" -s "github"
+      run: dotnet pack -c Release
+    - name: Publish Nuget to GitHub registry
+      run: dotnet nuget push "bin/Release/*.nupkg" -s https://nuget.pkg.github.com/minhhut/index.json -k ${GITHUB_TOKEN}  
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
