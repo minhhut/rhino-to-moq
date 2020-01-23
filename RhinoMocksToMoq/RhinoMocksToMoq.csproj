@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>Minh Nguyen</Authors>
+    <Description>Extensions to quickly migrate old Rhino Mocks to Moq</Description>
+    <PackageProjectUrl>https://github.com/minhhut/RhinoMocksToMoq</PackageProjectUrl>
+    <PackageTags>rhino moq adapter</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.13.1" />
+  </ItemGroup>
+
+</Project>
