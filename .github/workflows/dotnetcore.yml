@@ -18,5 +18,6 @@ jobs:
     - name: Publish NuGet
       uses: rohith/publish-nuget@v1.2.0
       with:
+        project_dir: RhinoMocksToMoq
         tag_format:  v* # [*] gets replaced with version
         nuget_key: ${{secrets.NUGET_API_KEY}} # nuget.org API key
