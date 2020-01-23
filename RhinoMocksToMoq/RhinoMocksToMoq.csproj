@@ -5,7 +5,8 @@
     <Version>0.1.0</Version>
     <Authors>Minh Nguyen</Authors>
     <Description>Extensions to quickly migrate old Rhino Mocks to Moq</Description>
-    <PackageProjectUrl>https://github.com/minhhut/RhinoMocksToMoq</PackageProjectUrl>
+    <PackageProjectUrl>https://www.nuget.org/packages/RhinoMocksToMoq/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/minhhut/rhino-to-moq</RepositoryUrl>
     <PackageTags>rhino moq adapter</PackageTags>
   </PropertyGroup>
 
