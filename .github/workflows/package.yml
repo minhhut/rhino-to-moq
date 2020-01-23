@@ -1,4 +1,4 @@
-name: .NET Core
+name: .NET Core - Push to Github Package
 
 on: [push]
 
@@ -15,5 +15,7 @@ jobs:
         dotnet-version: 2.2.108
     - name: Pack
       run: dotnet pack --configuration Release
-    - name: Push to Github
-      run: dotnet nuget push "bin/Release/*.nupkg" --source "github" 
+    - name: Setup nuget config
+      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' .nuget.config > nuget.config
+    - name: Publish nuget
+      run: dotnet nuget push "bin/Release/*.nupkg" -s "github"
