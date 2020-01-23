@@ -18,4 +18,4 @@ jobs:
     - name: Publish the package to Nuget.org
       run: dotnet nuget push RhinoMocksToMoq/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
     - name: Publish the package to GPR
-      run: dotnet nuget push RhinoMocksToMoq/bin/Release/*.nupkg -s https://nuget.pkg.github.com/minhhut/index.json -k ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+      run: dotnet nuget push RhinoMocksToMoq/bin/Release/*.nupkg -s "github"
