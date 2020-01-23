@@ -1,4 +1,4 @@
-name: .NET Core - Build and Publish to NuGet.Org
+name: .NET Core - Push to NuGet.Org
 
 on: [push]
 

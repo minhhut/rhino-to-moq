@@ -13,9 +13,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
-    - name: Pack
-      run: dotnet pack -c Release
-    - name: Publish Nuget to GitHub registry
-      run: dotnet nuget push "RhinoMocksToMoq/bin/Release/*.nupkg" -s https://nuget.pkg.github.com/minhhut/index.json -k ${GITHUB_TOKEN}  
+        source-url: https://nuget.pkg.github.com/minhhut/index.json
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Create the package
+      run: dotnet pack -c Release
+    - name: Publish the package to GPR
+      run: dotnet nuget push "RhinoMocksToMoq/bin/Release/*.nupkg"
