@@ -13,11 +13,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-    - name: Publish NuGet
-      uses: rohith/publish-nuget@v1.2.0
-      with:
-        project_dir: RhinoMocksToMoq
-        tag_format:  v* # [*] gets replaced with version
-        nuget_key: ${{secrets.NUGET_API_KEY}} # nuget.org API key
+        source_url: https://api.nuget.org/v3/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
+    - name: Create the package
+      run: dotnet pack -c Release
+    - name: Publish the package to Nuget.org
+      run: dotnet nuget push RhinoMocksToMoq/bin/Release/*.nupkg
