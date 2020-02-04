@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using Moq;
 
-namespace RhinoMocksToMoq
+namespace Rhino.Mocks
 {
     public static class MockExtensions
     {

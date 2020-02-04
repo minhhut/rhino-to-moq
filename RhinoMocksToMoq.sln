@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RhinoMocksToMoq", "RhinoMocksToMoq\RhinoMocksToMoq.csproj", "{8F5F866F-4880-4A1B-8DC5-4A73129DE74A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RhinoMocksToMoq.Tests", "RhinoMocksToMoq.Tests\RhinoMocksToMoq.Tests.csproj", "{FA2D1158-DF91-4D0E-A874-A333FD210A26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{8F5F866F-4880-4A1B-8DC5-4A73129DE74A}.Release|x64.Build.0 = Release|Any CPU
 		{8F5F866F-4880-4A1B-8DC5-4A73129DE74A}.Release|x86.ActiveCfg = Release|Any CPU
 		{8F5F866F-4880-4A1B-8DC5-4A73129DE74A}.Release|x86.Build.0 = Release|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Debug|x64.Build.0 = Debug|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Debug|x86.Build.0 = Debug|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Release|x64.ActiveCfg = Release|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Release|x64.Build.0 = Release|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Release|x86.ActiveCfg = Release|Any CPU
+		{FA2D1158-DF91-4D0E-A874-A333FD210A26}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
