@@ -1,5 +1,6 @@
-using Xunit;
+﻿using Xunit;
 using Rhino.Mocks;
+using System;
 
 namespace RhinoMocksToMoq.Tests
 {
@@ -132,6 +133,24 @@ namespace RhinoMocksToMoq.Tests
             Assert.Equal(4, calculator.Random());
             
             calculator.VerifyAllExpectations();                        
+        }
+
+        [Fact]
+        public void MulitpleReturnExpectationsOnSameMock()
+        {
+            const uint InnerFunctionResult = 0xdeadbeef;
+            Func<int, TimeSpan, uint> innerFunction = MockRepository.GenerateMock<Func<int, TimeSpan, uint>>();
+
+            for (var i = 0; i < 20; ++i)
+            {
+                innerFunction.Expect(f => f(i, TimeSpan.FromDays(i))).Return(InnerFunctionResult);
+            }
+
+            for (var i = 0; i < 20; ++i)
+            {
+                var result = innerFunction(i, TimeSpan.FromDays(i));
+                Assert.Equal(InnerFunctionResult, result);
+            }
         }
     }
 }
