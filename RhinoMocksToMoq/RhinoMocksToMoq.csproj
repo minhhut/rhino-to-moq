@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.2.0</Version>
     <Authors>Minh Nguyen</Authors>
     <Description>Extensions to quickly migrate old Rhino Mocks to Moq</Description>
     <PackageProjectUrl>https://www.nuget.org/packages/RhinoMocksToMoq/</PackageProjectUrl>
