@@ -15,5 +15,9 @@ jobs:
         dotnet-version: 3.1.100
     - name: Create the package
       run: dotnet pack -c Release
-    - name: Publish the package to Nuget.org
-      run: dotnet nuget push RhinoMocksToMoq/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
+    - name: Publish to Nuget.org
+      run: dotnet nuget push RhinoMocksToMoq/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate    
+    - name: Publish to Github package
+      run: |
+        dotnet nuget add source https://nuget.pkg.github.com/minhhut/index.json -n github -u minhhut -p ${{secrets.GITHUB_TOKEN}} [--store-password-in-clear-text]
+        dotnet nuget push "bin/Release/rhino-to-moq.*.nupkg" --source "github" 
